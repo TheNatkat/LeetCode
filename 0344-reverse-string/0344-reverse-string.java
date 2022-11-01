@@ -1,12 +1,16 @@
 class Solution {
+    public void function(int l,int r,char[] s){
+            if(l>=r) return;       
+            char temp= s[l];
+            s[l]=s[r];
+            s[r]=temp;
+            function(++l,--r,s);
+        
+    }
     public void reverseString(char[] s) {
-        int r=0,l=s.length-1;
-        while(r<l){
-            char temp= s[r];
-            s[r]=s[l];
-            s[l]=temp;
-            r++;
-            l--;
-        }
+        int l=0,r=s.length-1;
+        function(l,r,s);
+        
+      
     }
 }
