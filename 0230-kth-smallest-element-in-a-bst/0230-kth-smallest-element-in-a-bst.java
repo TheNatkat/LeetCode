@@ -22,7 +22,6 @@ class Solution {
     }
     public void inorder(TreeNode A, int B){
         if (A==null) return;
-        if(count==B) return;
         inorder(A.left,B);
         count++;
         if(count==B) ans=A.val;
